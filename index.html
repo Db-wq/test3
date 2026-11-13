@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Friends Get Discount – Shop together. Save together.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8ff;--ink:#1b1340;--muted:#5d5880;--brand:#4b2bd6;--on-brand:#fff;--sun:#ffc933;--sun-ink:#2a1d00;--card:#fff;--line:#e4defa;--ok:#12a150;--track:#ece7fb;--hero:#2a158f;
+--display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#120d2b;--ink:#f1edff;--muted:#a9a2d0;--brand:#8b72ff;--on-brand:#140c3a;--card:#1c1540;--line:#33296b;--track:#2c2360;--ok:#3ddc84;--hero:#1c0f66;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#120d2b;--ink:#f1edff;--muted:#a9a2d0;--brand:#8b72ff;--on-brand:#140c3a;--card:#1c1540;--line:#33296b;--track:#2c2360;--ok:#3ddc84;--hero:#1c0f66;color-scheme:dark}
+html{height:100%;scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--body)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0}
+a{color:inherit}button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.hero{background:radial-gradient(900px 500px at 85% 20%,#5a3cf0 0,transparent 60%),var(--hero);color:#fff;padding:24px 0 80px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:36px;background:var(--bg);clip-path:ellipse(60% 100% at 50% 100%)}
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font:800 20px var(--display);text-decoration:none}
+.logo i{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:var(--sun);font-style:normal;font-size:20px}
+.nav nav{display:flex;gap:22px;align-items:center;font-weight:500}
+.nav nav a{text-decoration:none;opacity:.9}
+.pill{border:2px solid rgba(255,255,255,.5);padding:8px 16px;border-radius:999px;font-weight:700}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.hero h1{font-size:clamp(42px,7vw,78px);font-weight:800;letter-spacing:-.025em}
+.hero h1 span{display:block;color:var(--sun)}
+.lead{font-size:19px;max-width:30em;margin:20px 0 28px;color:#e3dcff}
+.btn{display:inline-block;border:0;border-radius:999px;padding:14px 26px;font-weight:700;text-decoration:none;background:var(--sun);color:var(--sun-ink)}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);margin-left:8px}
+.stats{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
+.stats b{display:block;font:800 30px var(--display);color:var(--sun)}
+.stats span{font-size:14px;color:#cfc5ff}
+/* phone */
+.stage{display:flex;flex-direction:column;align-items:center;gap:12px}
+.phone{width:290px;height:580px;border-radius:40px;background:#0d0826;padding:10px;box-shadow:0 30px 70px rgba(5,0,40,.55),0 0 0 2px #3b2a8f inset;position:relative}
+.screen{height:100%;border-radius:30px;background:#f6f3ff;color:#1b1340;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.screen .sb{height:26px;display:flex;justify-content:space-between;padding:8px 18px 0;font-size:11px;font-weight:700;color:#4b2bd6}
+.sbody{flex:1;overflow:auto;padding:8px 14px 12px}
+.ph-h{display:flex;justify-content:space-between;align-items:center;font:800 15px var(--display);color:#4b2bd6;margin-bottom:8px}
+.ph-s{background:#fff;border-radius:999px;padding:8px 14px;font-size:12px;color:#8a84ad;margin-bottom:10px}
+.ph-b{background:linear-gradient(120deg,#ffc933,#ffb300);border-radius:16px;padding:12px;margin-bottom:10px;font:800 15px/1.15 var(--display);color:#2a1d00}
+.ph-b small{display:block;font:500 11px var(--body);margin-top:4px}
+.row{display:flex;align-items:center;gap:10px;background:#fff;border-radius:14px;padding:9px;margin-bottom:8px;width:100%;border:0;text-align:left;color:inherit}
+.row .e{width:44px;height:44px;border-radius:12px;background:#ece7fb;display:grid;place-items:center;font-size:24px;flex:none}
+.row b{display:block;font-size:13px}.row em{font-style:normal;font-size:12px;color:#12a150;font-weight:700}
+.row s{font-size:11px;color:#8a84ad;margin-left:4px}
+.big{font-size:84px;text-align:center;background:#ece7fb;border-radius:20px;padding:12px;margin:6px 0 10px}
+.ph-p{font:800 26px var(--display);color:#12a150}
+.pbar{height:9px;border-radius:9px;background:#ddd5fa;overflow:hidden;margin:10px 0 6px}.pbar i{display:block;height:100%;background:#12a150;border-radius:9px;transition:width .4s}
+.pb{width:100%;border:0;border-radius:12px;padding:12px;font-weight:700;font-size:14px;background:#4b2bd6;color:#fff;margin-top:8px}
+.pb.sec{background:transparent;color:#4b2bd6;border:2px solid #4b2bd6}
+.pb.wa{background:#12a150;display:block;text-align:center;text-decoration:none}
+.ring{width:130px;height:130px;border-radius:50%;margin:8px auto;display:grid;place-items:center;background:conic-gradient(#12a150 calc(var(--p)*1%),#ddd5fa 0)}
+.ring div{width:100px;height:100px;border-radius:50%;background:#f6f3ff;display:grid;place-items:center;font:800 26px var(--display);text-align:center;line-height:1}
+.ring small{display:block;font:500 10px var(--body);color:#5d5880}
+.av{display:flex;justify-content:center;margin:8px 0}.av i{width:26px;height:26px;border-radius:50%;border:2px solid #f6f3ff;margin-left:-6px;display:grid;place-items:center;font-size:12px;font-style:normal}
+.ok{width:76px;height:76px;border-radius:50%;background:#12a150;color:#fff;display:grid;place-items:center;font-size:40px;margin:30px auto 10px}
+.tabbar{display:flex;justify-content:space-around;padding:8px 0 12px;border-top:1px solid #e4defa;background:#fff;font-size:10px;color:#8a84ad}
+.tabbar b{color:#4b2bd6}
+.hint{font-size:13px;color:#cfc5ff}
+/* sections */
+section{padding:64px 0}
+h2{font-size:clamp(30px,4.6vw,46px);font-weight:800;letter-spacing:-.015em;margin-bottom:10px}
+.sub{color:var(--muted);max-width:36em;margin:0 0 32px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;padding-top:20px;border-top:3px solid var(--brand)}
+.steps li::before{content:counter(s);display:block;font:800 42px var(--display);color:var(--brand);margin-bottom:4px}
+.steps h3{font-size:22px;margin-bottom:6px}.steps p{margin:0;color:var(--muted)}
+.calc{background:var(--hero);color:#fff;border-radius:32px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.calc h2{color:#fff}.calc .sub{color:#d6ccff}
+.pick{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.pick button{border:1.5px solid rgba(255,255,255,.4);background:transparent;color:#fff;border-radius:999px;padding:7px 14px}
+.pick button[aria-pressed="true"]{background:var(--sun);color:var(--sun-ink);border-color:var(--sun)}
+input[type=range]{width:100%;accent-color:var(--sun);height:32px}
+.res{background:rgba(255,255,255,.1);border-radius:22px;padding:24px;text-align:center}
+.res .pp{font:800 56px var(--display);color:var(--sun);line-height:1}
+.res .sv{font-size:20px;margin-top:6px}.res small{display:block;margin-top:10px;color:#cfc5ff;font-size:14px}
+.tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.tab{border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:8px 18px;font-weight:500}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.deal{background:var(--card);border:1.5px solid var(--line);border-radius:24px;padding:16px;display:flex;flex-direction:column;position:relative}
+.emo{display:grid;place-items:center;width:100%;height:116px;border-radius:16px;background:var(--track);font-size:54px}
+.tag{position:absolute;top:26px;right:26px;background:var(--sun);color:var(--sun-ink);font-weight:700;font-size:13px;border-radius:8px;padding:2px 8px}
+.deal h3{font-size:20px;margin:14px 0 6px}
+.price{font:800 30px var(--display);color:var(--ok);line-height:1}
+.was{color:var(--muted);text-decoration:line-through;font-size:15px}
+.bar{height:11px;border-radius:99px;background:var(--track);overflow:hidden;margin:12px 0 6px}.bar i{display:block;height:100%;background:var(--ok);border-radius:99px;transition:width .5s}
+.count{font-size:15px;color:var(--muted)}.timer{font-size:14px;color:var(--brand);font-weight:700;margin:2px 0 8px;font-variant-numeric:tabular-nums}
+.join{width:100%;margin-top:auto;border:0;border-radius:14px;padding:13px;font-weight:700;background:var(--brand);color:var(--on-brand)}
+.join:hover{filter:brightness(1.1)}.join[disabled]{background:var(--track);color:var(--muted);cursor:default;filter:none}
+.wal{display:block;margin-top:8px;text-align:center;font-weight:700;text-decoration:none;border:2px solid var(--ok);color:var(--ok);padding:9px;border-radius:14px}
+.why{background:var(--track);border-radius:30px;padding:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.why h3{font-size:21px;margin-bottom:6px}.why p{margin:0;color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{font:700 20px var(--display);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--brand);font-size:26px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin:10px 0 0;max-width:42em}
+.cta{background:var(--hero);color:#fff;border-radius:36px;padding:52px 24px;text-align:center}
+.cta h2{color:#fff}.cta .sub{margin:0 auto;color:#d6ccff}
+.cta form{display:flex;gap:10px;max-width:480px;margin:24px auto 0;flex-wrap:wrap}
+.cta input{flex:1 1 220px;min-width:0;padding:14px 18px;border-radius:999px;border:0;font:inherit;background:#fff;color:#1b1340}
+#thanks{min-height:1.6em;margin-top:14px;color:var(--sun);font-weight:700}
+footer{padding:30px 0 40px;color:var(--muted);font-size:15px}
+@media (max-width:860px){.hero-grid,.steps,.why,.calc{grid-template-columns:1fr}.nav nav a:not(.pill){display:none}.btn.ghost{margin:10px 0 0}.calc{padding:24px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.mo{position:fixed;inset:0;background:rgba(10,4,40,.6);display:flex;align-items:flex-end;justify-content:center;z-index:50;padding:0}
+.mo[hidden]{display:none}
+.sheet{background:var(--card);color:var(--ink);width:100%;max-width:440px;border-radius:28px 28px 0 0;padding:26px 22px calc(22px + env(safe-area-inset-bottom,0px));position:relative;animation:up .25s ease-out}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+@media (min-width:600px){.mo{align-items:center}.sheet{border-radius:28px}}
+.x{position:absolute;top:12px;right:14px;border:0;background:var(--track);color:var(--ink);width:34px;height:34px;border-radius:50%;font-size:20px;line-height:1}
+.pr{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.pr .e{display:grid;place-items:center;width:64px;height:64px;border-radius:16px;background:var(--track);font-size:34px;flex:none}
+.pr b{font:800 20px var(--display)}.pp2{font:800 28px var(--display);color:var(--ok);line-height:1.1}.ps{font-size:14px;color:var(--muted)}
+.lines{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line);font:700 18px var(--display)}
+.meth{border:0;padding:0;margin:4px 0 14px}.meth legend{font-weight:700;margin-bottom:6px;padding:0}
+.meth label{display:flex;gap:10px;align-items:center;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.meth label:has(input:checked){border-color:var(--brand);background:var(--track)}
+.meth input{accent-color:var(--brand);width:18px;height:18px}
+.note{font-size:13px;color:var(--muted);margin:10px 0 0;text-align:center}
+.suc{text-align:center;padding-top:8px}.suc h3{font-size:26px;margin:10px 0 6px}.suc p{color:var(--muted);margin:0 0 14px}
+.okc{width:76px;height:76px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;font-size:40px;margin:0 auto}
+.solo{width:100%;margin-top:8px;border:0;background:transparent;color:var(--muted);text-decoration:underline;padding:6px;font-size:14px}
+:root{--sun:#e9c46a;--sun-ink:#2a1d00;--hero:#150b45}
+body{-webkit-font-smoothing:antialiased}
+.hero{background:radial-gradient(720px 440px at 82% 16%,rgba(124,92,255,.6),transparent 62%),radial-gradient(520px 380px at 6% 92%,rgba(233,196,106,.2),transparent 60%),linear-gradient(160deg,#0e0630,#25107a)}
+.nav{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:999px;padding:8px 10px 8px 14px}
+.logo i{background:linear-gradient(135deg,#f6d77f,#d9a93e);box-shadow:0 4px 14px rgba(233,196,106,.4)}
+.pill{background:rgba(255,255,255,.1)}
+.gear{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;padding:0}
+.gear:hover{background:rgba(255,255,255,.2)}
+.btn{background:linear-gradient(135deg,#f8de8c,#dfb04a);box-shadow:0 8px 24px -6px rgba(233,196,106,.6)}
+.phone{background:linear-gradient(145deg,#2a2060,#0a0522);box-shadow:0 40px 80px -10px rgba(5,0,40,.7),0 0 0 1.5px rgba(233,196,106,.45) inset,0 0 80px rgba(124,92,255,.35)}
+.phone::before{content:'';position:absolute;top:17px;left:50%;width:76px;height:20px;transform:translateX(-50%);background:#0a0522;border-radius:12px;z-index:3}
+.stage{position:relative}
+.fl{position:absolute;z-index:4;width:92px;height:92px;padding:12px;border-radius:24px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 20px 40px -12px rgba(0,0,0,.45);animation:fl 6s ease-in-out infinite}
+.fl svg{width:100%;height:100%}
+.f1{left:2%;top:10%}.f2{right:0;bottom:22%;animation-delay:-2s}.f3{left:-2%;top:58%;width:76px;height:76px;animation-delay:-4s}
+@keyframes fl{50%{transform:translateY(-12px)}}
+@media (max-width:560px){.fl{display:none}}
+.emo{background:radial-gradient(circle at 50% 25%,rgba(255,255,255,.75),transparent 70%),var(--track)}
+.emo svg{height:88%;width:auto;filter:drop-shadow(0 10px 14px rgba(30,10,100,.25))}
+.row .e svg{width:34px;height:34px}.big{display:grid;place-items:center}.big svg{height:96px;width:auto}
+.pr .e svg{width:46px;height:46px}.pick svg{width:22px;height:22px}.pick button{display:inline-flex;align-items:center;gap:6px}
+.deal{border-radius:26px;box-shadow:0 18px 40px -24px rgba(40,20,120,.45);transition:transform .25s,box-shadow .25s}
+.deal:hover{transform:translateY(-4px);box-shadow:0 26px 50px -22px rgba(40,20,120,.55)}
+.tag{background:linear-gradient(135deg,#f8de8c,#dfb04a)}
+.join{box-shadow:0 8px 20px -8px var(--brand)}
+section{padding:76px 0}
+h2{letter-spacing:-.02em}
+.calc{background:radial-gradient(500px 300px at 90% 0,rgba(124,92,255,.5),transparent 60%),linear-gradient(160deg,#150b45,#2a1480);box-shadow:0 30px 60px -30px rgba(40,20,120,.6)}
+.res{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18)}
+.cta{background:radial-gradient(500px 280px at 50% 0,rgba(233,196,106,.22),transparent 60%),linear-gradient(160deg,#0e0630,#25107a)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.fs{border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:8px 16px;font-weight:700}
+.dr{position:fixed;inset:0;z-index:60;background:rgba(10,4,40,.55);display:flex;justify-content:flex-end}
+.dr[hidden]{display:none}
+.panel{position:relative;width:min(380px,100%);height:100%;background:var(--card);color:var(--ink);padding:calc(24px + env(safe-area-inset-top,0px)) 22px calc(24px + env(safe-area-inset-bottom,0px));overflow:auto;animation:inn .25s ease-out}
+@keyframes inn{from{transform:translateX(40px);opacity:0}}
+.panel h2{font-size:30px;margin-bottom:4px}
+.grp{margin:24px 0 0}.grp h3{font:700 15px var(--body);color:var(--muted);margin-bottom:10px}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;background:var(--track);border-radius:14px;padding:4px;gap:4px}
+.seg button{border:0;background:transparent;color:var(--ink);border-radius:10px;padding:10px 6px;font-weight:500}
+.seg button[aria-pressed=true]{background:var(--card);box-shadow:0 2px 8px rgba(30,10,100,.2);font-weight:700}
+.sw{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line);cursor:pointer}
+.sw input{appearance:none;-webkit-appearance:none;flex:none;width:46px;height:28px;border-radius:99px;background:var(--line);position:relative;cursor:pointer;transition:background .2s;margin:0}
+.sw input::after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .2s}
+.sw input:checked{background:var(--brand)}.sw input:checked::after{transform:translateX(18px)}
+.dbtn{width:100%;border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:14px;padding:12px;font-weight:700;margin-top:10px}
+.abt{font-size:14px;color:var(--muted)}
+html:root[data-contrast][data-contrast]{--muted:color-mix(in srgb,var(--ink) 88%,var(--bg));--line:color-mix(in srgb,var(--ink) 45%,var(--bg))}
+html[data-motion],html[data-motion] *,html[data-motion] *::before{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+html[data-timers=off] .timer{display:none}
+.appbar{display:flex;gap:12px;align-items:center;justify-content:center;background:#0e0630;color:#f1edff;font-size:14px;padding:9px 44px 9px 16px;position:relative;text-align:center;flex-wrap:wrap}
+.appbar[hidden]{display:none}
+.appbar a{color:#e9c46a;font-weight:700}
+.appbar button{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#fff;font-size:22px;width:32px;height:32px;line-height:1}
+.mode{display:inline-flex;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:3px;flex:none}
+.mode button{border:0;background:transparent;color:#fff;padding:7px 14px;border-radius:999px;font-weight:700;font-size:14px}
+.mode button[aria-pressed="true"]{background:linear-gradient(135deg,#f8de8c,#dfb04a);color:#2a1d00}
+@media (max-width:600px){.pill,.lt{display:none}.nav nav{gap:10px}}
+.tb{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.tb input,.tb select{padding:12px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
+.tb input{flex:1 1 220px;min-width:0}
+.mnote{background:var(--track);border-radius:14px;padding:12px 16px;margin-bottom:16px;font-size:15px}
+.mnote[hidden]{display:none}
+.vl{display:flex;gap:8px;margin:2px 0 10px}
+.vl button{flex:1;border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:10px;padding:7px;font-size:14px;font-weight:500}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:34px 0}
+.sheet.pg{max-width:560px;max-height:92vh;overflow:auto}
+.pg .hd{display:grid;place-items:center;height:190px;border-radius:20px;background:radial-gradient(circle at 50% 25%,rgba(255,255,255,.75),transparent 70%),var(--track);margin-bottom:14px}
+.pg .hd svg{height:84%;width:auto}
+.pg table{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:15px}
+.pg td{padding:8px 0;border-top:1px solid var(--line)}.pg td:first-child{color:var(--muted);width:38%}
+.rv{border-top:1px solid var(--line);padding:10px 0;font-size:15px}.rv b{display:block}
+.stars{color:#dfb04a;letter-spacing:2px}
+.scimg{width:100%;border-radius:18px;display:block;margin:10px 0 12px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="gS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d9d5f0"/></linearGradient><linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7aa8ff"/><stop offset="1" stop-color="#3a2fd0"/></linearGradient><linearGradient id="gD" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a4090"/><stop offset="1" stop-color="#150f3a"/></linearGradient><linearGradient id="gG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8e08e"/><stop offset="1" stop-color="#c8962e"/></linearGradient><linearGradient id="gR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff9a86"/><stop offset="1" stop-color="#d83c5b"/></linearGradient><linearGradient id="gP" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9b7bff"/><stop offset="1" stop-color="#4b2bd6"/></linearGradient></defs></svg>
+<div class="appbar" id="appbar"><span>The Android app is coming soon.</span><a href="#waitlist">Get notified</a><button id="ab-x" aria-label="Dismiss">×</button></div>
+<header class="hero">
+<div class="wrap">
+  <div class="nav"><a class="logo" href="#top"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2a1d00" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3.5 3-5.2 5.5-5.2s5 1.7 5.5 5.2M15.5 14.2c2.6-.3 4.5 1.2 5 4"/></svg></i><span class="lt">Friends Get Discount</span></a>
+    <nav><a href="#how">How it works</a><a href="#save">Savings</a><a href="#deals">Deals</a><a href="#faq">FAQ</a><div class="mode" role="group" aria-label="Buying mode"><button data-mode="group" aria-pressed="true">Group</button><button data-mode="solo" aria-pressed="false">Buy solo</button></div><a class="pill" href="#waitlist">Get early access</a><button class="gear" id="gb" aria-label="Open settings"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></button></nav></div>
+  <div class="hero-grid" id="top">
+    <div>
+      <h1>Shop together.<span>Save together.</span></h1>
+      <p class="lead">Pick a product, invite friends on WhatsApp, and when the group fills, everyone pays the group price. Made for India, starting in Bengaluru.</p>
+      <a class="btn" href="#waitlist">Get early access</a><a class="btn ghost" href="#deals">See group deals</a>
+      <div class="stats"><div><b>42%</b><span>off on the sample earphones deal</span></div><div><b>10</b><span>people fill a typical group</span></div><div><b>Android</b><span>first, iPhone later</span></div></div>
+    </div>
+    <div class="stage">
+      <div class="phone"><div class="screen"><div class="sb"><span>9:30</span><span>●●●</span></div><div class="sbody" id="app"></div>
+        <div class="tabbar"><b>Home</b><span>Groups</span><span>Cart</span><span>Profile</span></div></div></div>
+      <div class="fl f1" id="f1"></div><div class="fl f2" id="f2"></div><div class="fl f3" id="f3"></div><div class="hint">This is a working demo. Tap through it.</div>
+    </div>
+  </div>
+</div>
+</header>
+<main>
+<section id="how"><div class="wrap">
+  <h2>How a group deal works</h2>
+  <p class="sub">No coupon codes and no haggling. The more people in the group, the lower the price.</p>
+  <ol class="steps">
+    <li><h3>Pick a deal</h3><p>Browse electronics, fashion and more. Every product shows the group price next to the individual price.</p></li>
+    <li><h3>Invite your friends</h3><p>Share the group on WhatsApp or copy the link. Friends join in one tap.</p></li>
+    <li><h3>Fill the group</h3><p>When the last person joins, the group is created and everyone gets the group price.</p></li>
+  </ol></div></section>
+
+<section id="save" style="padding-top:8px"><div class="wrap"><div class="calc">
+  <div><h2>See what your friends are worth</h2><p class="sub">Pick a product and drag the slider. The price drops as more people join.</p>
+    <div class="pick" id="pick"></div>
+    <label for="n" style="font-weight:700">Group size: <span id="nv">10</span> people</label>
+    <input type="range" id="n" min="1" max="10" value="10"></div>
+  <div class="res" aria-live="polite"><div class="pp" id="cp">₹699</div><div class="sv" id="cs">You save ₹500</div><small>Illustration with sample prices. The price steps down evenly from the individual price to the group price.</small></div>
+</div></div></section>
+
+<section id="deals" style="padding-top:8px"><div class="wrap">
+  <h2>Trending group deals</h2><p class="sub">Tap Join group and watch the progress bar move.</p>
+  <div class="tb"><input type="search" id="q" placeholder="Search products" aria-label="Search products"><select id="sort" aria-label="Sort deals"><option value="feat">Featured</option><option value="pl">Price: low to high</option><option value="ph">Price: high to low</option><option value="mj">Most joined</option><option value="dd">Biggest discount</option></select></div>
+  <div class="mnote" id="mnote" hidden>Solo mode is on. Buy anything on your own at the individual price, no group needed. Switch to Group to save more.</div>
+  <div class="tabs" role="group" aria-label="Category">
+    <button class="tab" data-cat="all" aria-pressed="true">All</button><button class="tab" data-cat="Electronics" aria-pressed="false">Electronics</button><button class="tab" data-cat="Fashion" aria-pressed="false">Fashion</button><button class="tab" data-cat="Home & Kitchen" aria-pressed="false">Home & Kitchen</button></div>
+  <div class="deals" id="deals"></div></div></section>
+
+<section style="padding-top:8px"><div class="wrap"><div class="why">
+  <div><h3>Lower prices</h3><p>Group prices sit well under the individual price, like ₹699 against ₹1,199 for earphones.</p></div>
+  <div><h3>Easy to share</h3><p>Every group has a WhatsApp invite and a copy link, so friends can join in seconds.</p></div>
+  <div><h3>Clear progress</h3><p>See how many people have joined and how many are still needed.</p></div>
+</div></div></section>
+
+<section id="faq" style="padding-top:8px"><div class="wrap">
+  <h2>Questions</h2><p class="sub">The short answers.</p>
+  <details><summary>What is a group deal?</summary><p>A deal with two prices: the individual price and a lower group price. When enough people join the group, everyone gets the lower price.</p></details>
+  <details><summary>What if the group doesn’t fill up?</summary><p>The details are still being designed. Early-access members will see exactly how it works before they join their first group.</p></details>
+  <details><summary>Where and when does it launch?</summary><p>Bengaluru first, on Android, then across India.</p></details>
+  <details><summary>Do my friends need the app?</summary><p>Friends get an invite on WhatsApp or a copy link and join the group from there.</p></details>
+</div></section>
+
+<section id="waitlist" style="padding-top:8px"><div class="wrap"><div class="cta">
+  <h2>Be first on Android</h2><p class="sub">Leave your email and we’ll tell you when Friends Get Discount is ready in Bengaluru.</p>
+  <form id="wl" novalidate><input type="email" id="em" placeholder="Your email" aria-label="Your email" autocomplete="email"><button class="btn" type="submit">Notify me</button></form>
+  <div id="thanks" role="status"></div></div></div></section>
+</main>
+<footer><div class="wrap"><span>Friends Get Discount · Shop together. Save together.</span><button class="fs" id="fs">Settings</button></div></footer>
+
+<div id="dr" class="dr" hidden><aside class="panel" role="dialog" aria-modal="true" aria-labelledby="dr-t">
+<button class="x" id="dr-x" aria-label="Close settings">×</button>
+<h2 id="dr-t">Settings</h2><p class="abt">Saved on this device only.</p>
+<div class="grp"><h3>Appearance</h3><div class="seg" role="group" aria-label="Theme"><button data-k="theme" data-v="system">System</button><button data-k="theme" data-v="light">Light</button><button data-k="theme" data-v="dark">Dark</button></div></div>
+<div class="grp"><h3>Display size</h3><div class="seg" role="group" aria-label="Display size"><button data-k="size" data-v="0.9">Small</button><button data-k="size" data-v="1">Default</button><button data-k="size" data-v="1.12">Large</button></div></div>
+<div class="grp"><h3>Accessibility and display</h3>
+<label class="sw"><span>Reduce motion</span><input type="checkbox" id="s-motion"></label>
+<label class="sw"><span>High contrast</span><input type="checkbox" id="s-contrast"></label>
+<label class="sw"><span>Show deal countdowns</span><input type="checkbox" id="s-timers"></label></div>
+<div class="grp"><h3>Demo data</h3><button class="dbtn" id="s-reset">Reset demo deals and orders</button><button class="dbtn" id="s-def">Restore default settings</button></div>
+<div class="grp abt"><h3>About</h3>Friends Get Discount web demo. Prices are samples. No payment is taken and nothing you enter is sent anywhere.</div>
+</aside></div>
+<div id="vm" class="mo" hidden><div class="sheet pg" role="dialog" aria-modal="true" aria-labelledby="vm-t"><button class="x" id="vm-x" aria-label="Close">×</button><div id="vm-c"></div></div></div>
+<div id="sc" class="mo" hidden><div class="sheet pg" role="dialog" aria-modal="true" aria-labelledby="sc-t"><button class="x" id="sc-x" aria-label="Close">×</button><h3 id="sc-t" style="font-size:24px">Deal card</h3><img id="sc-i" class="scimg" alt="Deal card preview"><button class="join" id="sc-s">Share card</button><a class="wal" id="sc-w" target="_blank" rel="noopener">Send text on WhatsApp</a><p class="note" id="sc-n"></p></div></div>
+<div id="pm" class="mo" hidden><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="pm-t">
+<button class="x" id="pm-x" aria-label="Close">×</button>
+<div id="pm-a"><div class="pr"><span class="e" id="pm-e"></span><div><b id="pm-t"></b><div class="pp2" id="pm-p"></div><div class="ps" id="pm-s"></div></div></div>
+<div class="lines"><span>Total</span><span id="pm-tot"></span></div>
+<fieldset class="meth"><legend>Pay with</legend>
+<label><input type="radio" name="pmt" value="upi" checked> UPI (GPay, PhonePe, Paytm)</label>
+<label><input type="radio" name="pmt" value="card"> Debit or credit card</label>
+<label><input type="radio" name="pmt" value="cod"> Cash on delivery</label></fieldset>
+<button class="join" id="pm-btn"></button><p class="note">Demo checkout. No real payment is taken and no details are collected.</p></div>
+<div id="pm-b" class="suc" hidden><div class="okc">✓</div><h3 id="pm-h"></h3><p id="pm-m"></p><a class="wal" id="pm-w" target="_blank" rel="noopener">Invite friends on WhatsApp</a><button class="join" id="pm-c" style="margin-top:10px">Continue</button></div>
+</div></div>
+<script>
+var T=10, inr=function(n){return "₹"+Math.round(n).toLocaleString("en-IN")};
+var ART={earphones:'<svg viewBox="0 0 120 120" role="img" aria-label="Wireless earphones"><ellipse cx="60" cy="108" rx="40" ry="6" fill="#1b1340" opacity=".15"/><rect x="30" y="60" width="60" height="44" rx="20" fill="url(#gS)" stroke="#cfc9ee"/><path d="M30 80h60" stroke="#cfc9ee"/><circle cx="60" cy="80" r="3" fill="url(#gP)"/><g fill="url(#gS)" stroke="#cfc9ee"><ellipse cx="42" cy="34" rx="10" ry="12"/><rect x="38.5" y="40" width="7" height="22" rx="3.5"/><ellipse cx="78" cy="34" rx="10" ry="12"/><rect x="74.5" y="40" width="7" height="22" rx="3.5"/></g></svg>',
+sneakers:'<svg viewBox="0 0 120 120" role="img" aria-label="Sneakers"><ellipse cx="60" cy="104" rx="46" ry="6" fill="#1b1340" opacity=".15"/><path d="M12 92V70q0-8 8-10l20-6q4 12 18 14l36 8q18 4 18 20z" fill="url(#gB)"/><path d="M40 54l8 8m-2-12 8 8m2-14 8 8" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M28 80q16 6 34 4" stroke="url(#gG)" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M12 92h96q0 10-10 10H22q-10 0-10-10z" fill="url(#gS)" stroke="#cfc9ee"/></svg>',
+watch:'<svg viewBox="0 0 120 120" role="img" aria-label="Smart watch"><rect x="42" y="4" width="36" height="34" rx="9" fill="url(#gD)"/><rect x="42" y="82" width="36" height="34" rx="9" fill="url(#gD)"/><rect x="28" y="28" width="64" height="64" rx="20" fill="url(#gD)" stroke="url(#gG)" stroke-width="3"/><rect x="92" y="52" width="5" height="14" rx="2.5" fill="url(#gG)"/><rect x="35" y="35" width="50" height="50" rx="14" fill="#0b0720"/><circle cx="60" cy="60" r="16" fill="none" stroke="url(#gG)" stroke-width="2.5"/><path d="M60 60V49M60 60l8 5" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>',
+backpack:'<svg viewBox="0 0 120 120" role="img" aria-label="Travel backpack"><ellipse cx="60" cy="110" rx="34" ry="5" fill="#1b1340" opacity=".15"/><path d="M46 32v-8a14 14 0 0128 0v8" fill="none" stroke="#9b2d45" stroke-width="6" stroke-linecap="round"/><rect x="26" y="30" width="68" height="78" rx="24" fill="url(#gR)"/><path d="M38 54h44" stroke="#fff" stroke-opacity=".55" stroke-width="2.5" stroke-linecap="round"/><rect x="36" y="68" width="48" height="30" rx="12" fill="#fff" fill-opacity=".16" stroke="#fff" stroke-opacity=".5"/><rect x="54" y="78" width="12" height="6" rx="3" fill="url(#gG)"/></svg>'};
+var deals=[
+{id:"earphones",name:"Wireless Earphones",emo:ART.earphones,cat:"Electronics",price:699,was:1199,joined:8,hrs:5.2},
+{id:"sneakers",name:"Everyday Sneakers",emo:ART.sneakers,cat:"Fashion",price:899,was:1499,joined:4,hrs:11.5},
+{id:"watch",name:"Smart Watch",emo:ART.watch,cat:"Electronics",price:999,was:1799,joined:6,hrs:8.1},
+{id:"backpack",name:"Travel Backpack",emo:ART.backpack,cat:"Fashion",price:549,was:999,joined:3,hrs:20.3}];
+deals.forEach(function(d){d.end=Date.now()+d.hrs*3600000});
+var mine={},cat="all";
+function $(i){return document.getElementById(i)}
+function pct(d){return Math.round((1-d.price/d.was)*100)}
+function wa(d){return "https://wa.me/?text="+encodeURIComponent("Join my group for "+d.name+" on Friends Get Discount. We all pay "+inr(d.price)+" instead of "+inr(d.was)+".")}
+function need(d){var n=T-d.joined;return n<=0?"Group complete. "+inr(d.price)+" locked in.":d.joined+" people joined · "+n+" needed"}
+function fmt(ms){if(ms<0)ms=0;var s=Math.floor(ms/1000),h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return [h,m,x].map(function(v){return String(v).padStart(2,"0")}).join(":")}
+/* phone prototype */
+var scr="home",E=deals[0],cur=deals[0];
+function app(){
+  var h="";
+  if(scr==="home"){
+    h='<div class="ph-h"><span>Friends Get Discount</span><span>🛒</span></div><div class="ph-s">🔍 Search products…</div><div class="ph-b">Group shopping = more savings!<small>Join with friends and save big.</small></div><div style="font:800 13px var(--display);margin:6px 0">Popular group deals</div>';
+    deals.slice(0,3).forEach(function(d){h+='<button class="row" data-open="'+d.id+'"><span class="e">'+d.emo+'</span><span><b>'+d.name+'</b><em>'+inr(d.price)+'</em><s>'+inr(d.was)+'</s><br><small style="font-size:11px;color:#5d5880">'+d.joined+'/'+T+' joined</small></span></button>'});
+  } else if(scr==="product"){
+    h='<div class="big">'+cur.emo+'</div><b style="font-size:16px">'+cur.name+'</b><div class="ph-p">'+inr(cur.price)+' <s style="font:400 13px var(--body);color:#8a84ad">'+inr(cur.was)+'</s> <span style="font:700 11px var(--body);background:#ffc933;border-radius:6px;padding:2px 6px">'+pct(cur)+'% OFF</span></div><div class="pbar"><i style="width:'+cur.joined*10+'%"></i></div><div style="font-size:12px;color:#5d5880">Join with '+(T-cur.joined)+' more people to get this price</div><button class="pb" data-act="join">Join group for '+inr(cur.price)+'</button><button class="pb sec" data-act="home">Back</button>';
+  } else if(scr==="invite"){
+    h='<div class="ph-h"><span>Group progress</span></div><div style="font-size:13px"><b>'+cur.name+'</b> · '+inr(cur.price)+'</div><div class="ring" style="--p:'+cur.joined*10+'"><div><span>'+cur.joined*10+'%<small>'+cur.joined+'/'+T+' members</small></span></div></div><div class="av"><i style="background:#ffc933">😀</i><i style="background:#9ae6b4">🙂</i><i style="background:#fbb6ce">😄</i><i style="background:#90cdf4">😎</i></div><div style="font-size:12px;text-align:center;color:#5d5880">Invite your friends to unlock the deal</div><a class="pb wa" target="_blank" rel="noopener" href="'+wa(cur)+'">Share via WhatsApp</a><button class="pb sec" data-act="friend">Pretend a friend joined</button>';
+  } else {
+    h='<div class="ok">✓</div><div style="font:800 22px var(--display);text-align:center">Group created!</div><p style="text-align:center;font-size:13px;color:#5d5880">You’re now part of the group. Enjoy your savings of '+inr(cur.was-cur.price)+'.</p><button class="pb" data-act="reset">Continue shopping</button>';
+  }
+  $("app").innerHTML=h;
+}
+$("app").addEventListener("click",function(e){
+  var b=e.target.closest("[data-open],[data-act]");if(!b)return;
+  if(b.dataset.open){cur=deals.filter(function(d){return d.id===b.dataset.open})[0];cur.joined=Math.min(cur.joined,T-1);scr="product"}
+  else{var a=b.dataset.act;
+    if(a==="join"){if(mine[cur.id]){scr="invite"}else{openPay(cur.id,"group");return}}
+    else if(a==="friend"){cur.joined=Math.min(T,cur.joined+1);if(cur.joined>=T)scr="done"}
+    else if(a==="home"||a==="reset"){scr="home"}}
+  app();grid();
+});
+/* deals grid */
+var pay=null;
+function join(id){var d=deals.filter(function(x){return x.id===id})[0];if(mine[id]||d.joined>=T)return;openPay(id,"group")}
+function openPay(id,mode){var d=deals.filter(function(x){return x.id===id})[0],p=mode==="solo"?d.was:d.price,left=T-d.joined-1;pay={d:d,mode:mode,p:p};
+ $("pm-e").innerHTML=d.emo;$("pm-t").textContent=d.name;$("pm-p").textContent=inr(p);$("pm-tot").textContent=inr(p);
+ $("pm-s").textContent=mode==="solo"?"Individual price. No group needed.":(left<=0?"Group price. Your payment completes the group.":"Group price. "+left+" more needed after you.");
+ $("pm-a").hidden=false;$("pm-b").hidden=true;setBtn();$("pm").hidden=false;$("pm-btn").focus()}
+function setBtn(){var cod=document.querySelector("input[name=pmt]:checked").value==="cod";$("pm-btn").disabled=false;$("pm-btn").textContent=(cod?"Place order · ":"Pay ")+inr(pay.p)}
+function closePay(){$("pm").hidden=true}
+function paid(){var d=pay.d,full=false;
+ if(pay.mode==="group"){d.joined=Math.min(T,d.joined+1);mine[d.id]=1;full=d.joined>=T;if(cur===d&&scr==="product")scr=full?"done":"invite"}
+ var oid="FGD"+Math.floor(10000+Math.random()*90000);
+ $("pm-a").hidden=true;$("pm-b").hidden=false;
+ $("pm-h").textContent=pay.mode==="solo"?"Order placed":(full?"Group complete":"You’re in the group");
+ $("pm-m").textContent="Order "+oid+" · "+d.name+" · "+inr(pay.p)+". "+(pay.mode==="solo"?"":(full?"Everyone gets the group price.":(T-d.joined)+" more needed. Invite friends to fill the group."));
+ var w=$("pm-w");w.hidden=!(pay.mode==="group"&&!full);w.href=wa(d);
+ grid();app()}
+$("pm-btn").addEventListener("click",function(){var b=$("pm-btn");b.disabled=true;b.textContent="Processing…";setTimeout(paid,1100)});
+$("pm-x").addEventListener("click",closePay);$("pm-c").addEventListener("click",closePay);
+$("pm").addEventListener("click",function(e){if(e.target===$("pm"))closePay()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closePay()});
+document.querySelectorAll("input[name=pmt]").forEach(function(r){r.addEventListener("change",function(){if(!$("pm-btn").disabled)setBtn()})});
+function grid(){
+  $("deals").innerHTML=deals.filter(function(d){return cat==="all"||d.cat===cat}).map(function(d){
+    var done=d.joined>=T,me=mine[d.id];
+    return '<article class="deal"><span class="tag">'+pct(d)+'% off</span><div class="emo" aria-hidden="true">'+d.emo+'</div><h3>'+d.name+'</h3><div class="price">'+inr(d.price)+'</div><div class="was">Individual: '+inr(d.was)+'</div><div class="bar"><i style="width:'+d.joined*10+'%"></i></div><div class="count">'+need(d)+'</div><div class="timer" data-end="'+d.end+'">Ends in '+fmt(d.end-Date.now())+'</div><button class="join" data-id="'+d.id+'"'+((me||done)?" disabled":"")+'>'+(me?(done?"Group created":"You’re in"):(done?"Group full":"Join group"))+'</button><button class="solo" data-solo="'+d.id+'">Or buy alone for '+inr(d.was)+'</button>'+(me&&!done?'<a class="wal" target="_blank" rel="noopener" href="'+wa(d)+'">Invite friends on WhatsApp</a>':"")+'</article>'}).join("");
+}
+$("deals").addEventListener("click",function(e){var s=e.target.closest("button[data-solo]");if(s){openPay(s.dataset.solo,"solo");return}var b=e.target.closest("button[data-id]");if(b)join(b.dataset.id)});
+document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){cat=t.dataset.cat;document.querySelectorAll(".tab").forEach(function(x){x.setAttribute("aria-pressed",x===t?"true":"false")});grid()})});
+setInterval(function(){document.querySelectorAll(".timer").forEach(function(t){t.textContent="Ends in "+fmt(+t.dataset.end-Date.now())})},1000);
+/* calculator */
+var cd=deals[0];
+function calc(){var n=+$("n").value;$("nv").textContent=n;var p=cd.was-(cd.was-cd.price)*(n-1)/(T-1);$("cp").textContent=inr(p);$("cs").textContent=n===1?"Individual price. Invite friends to save.":"You save "+inr(cd.was-p)+" ("+Math.round((1-p/cd.was)*100)+"% off)"}
+$("pick").innerHTML=deals.map(function(d,i){return '<button data-i="'+i+'" aria-pressed="'+(i===0)+'">'+d.emo+" "+d.name+"</button>"}).join("");
+$("pick").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;cd=deals[+b.dataset.i];[].forEach.call($("pick").children,function(x){x.setAttribute("aria-pressed",x===b)});calc()});
+$("n").addEventListener("input",calc);
+$("wl").addEventListener("submit",function(e){e.preventDefault();var v=$("em").value.trim(),o=$("thanks");
+  o.textContent=/^\S+@\S+\.\S+$/.test(v)?"Thanks! We’ll email you when Friends Get Discount launches.":"Enter a valid email address."});
+var S={theme:"system",size:"1",motion:false,contrast:false,timers:true};
+try{var sv=JSON.parse(localStorage.getItem("fgd-s")||"null");if(sv)for(var k in S)if(k in sv)S[k]=sv[k]}catch(e){}
+function saveS(){try{localStorage.setItem("fgd-s",JSON.stringify(S))}catch(e){}}
+function applyS(){var r=document.documentElement;
+ if(S.theme==="system")r.removeAttribute("data-theme");else r.setAttribute("data-theme",S.theme);
+ r.style.zoom=S.size;r.toggleAttribute("data-contrast",!!S.contrast);r.toggleAttribute("data-motion",!!S.motion);r.setAttribute("data-timers",S.timers?"on":"off");
+ document.querySelectorAll(".seg button").forEach(function(b){b.setAttribute("aria-pressed",String(S[b.dataset.k]===b.dataset.v))});
+ $("s-motion").checked=!!S.motion;$("s-contrast").checked=!!S.contrast;$("s-timers").checked=!!S.timers}
+var opener=null;
+function openDr(b){opener=b;$("dr").hidden=false;$("dr-x").focus()}
+function closeDr(){$("dr").hidden=true;if(opener)opener.focus()}
+$("gb").addEventListener("click",function(){openDr(this)});$("fs").addEventListener("click",function(){openDr(this)});
+$("dr-x").addEventListener("click",closeDr);$("dr").addEventListener("click",function(e){if(e.target===$("dr"))closeDr()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!$("dr").hidden)closeDr()});
+document.querySelectorAll(".seg button").forEach(function(b){b.addEventListener("click",function(){S[b.dataset.k]=b.dataset.v;applyS();saveS()})});
+[["s-motion","motion"],["s-contrast","contrast"],["s-timers","timers"]].forEach(function(p){$(p[0]).addEventListener("change",function(){S[p[1]]=this.checked;applyS();saveS()})});
+$("s-def").addEventListener("click",function(){S={theme:"system",size:"1",motion:false,contrast:false,timers:true};applyS();saveS()});
+$("s-reset").addEventListener("click",function(){deals.forEach(function(d){d.joined=d.j0});mine={};cur=deals[0];scr="home";grid();app()});
+$("f1").innerHTML=ART.earphones;$("f2").innerHTML=ART.watch;$("f3").innerHTML=ART.sneakers;
+/* search, solo mode, product page, share card, app banner */
+ART.speaker='<svg viewBox="0 0 120 120" role="img" aria-label="Bluetooth speaker"><ellipse cx="60" cy="106" rx="38" ry="5" fill="#1b1340" opacity=".15"/><rect x="22" y="34" width="76" height="70" rx="24" fill="url(#gD)"/><circle cx="60" cy="72" r="21" fill="#0b0720" stroke="url(#gG)" stroke-width="3"/><circle cx="60" cy="72" r="7" fill="url(#gP)"/><circle cx="60" cy="48" r="3" fill="url(#gG)"/></svg>';
+ART.powerbank='<svg viewBox="0 0 120 120" role="img" aria-label="Power bank"><ellipse cx="60" cy="110" rx="28" ry="5" fill="#1b1340" opacity=".15"/><rect x="34" y="12" width="52" height="96" rx="14" fill="url(#gP)"/><rect x="43" y="22" width="34" height="10" rx="5" fill="#fff" fill-opacity=".3"/><path d="M65 46l-12 20h9l-5 20 16-26h-10z" fill="url(#gG)"/></svg>';
+ART.shades='<svg viewBox="0 0 120 120" role="img" aria-label="Sunglasses"><ellipse cx="60" cy="96" rx="44" ry="5" fill="#1b1340" opacity=".15"/><path d="M8 50h104" stroke="#1b1340" stroke-width="5" stroke-linecap="round"/><rect x="12" y="46" width="42" height="34" rx="15" fill="url(#gD)"/><rect x="66" y="46" width="42" height="34" rx="15" fill="url(#gD)"/><path d="M54 56q6-5 12 0" fill="none" stroke="url(#gG)" stroke-width="4"/><path d="M20 56l10-4M74 56l10-4" stroke="#fff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"/></svg>';
+ART.bottle='<svg viewBox="0 0 120 120" role="img" aria-label="Steel water bottle"><ellipse cx="60" cy="110" rx="26" ry="5" fill="#1b1340" opacity=".15"/><rect x="46" y="6" width="28" height="15" rx="5" fill="url(#gG)"/><rect x="38" y="20" width="44" height="88" rx="16" fill="url(#gB)"/><rect x="38" y="54" width="44" height="22" fill="#fff" fill-opacity=".25"/></svg>';
+[{id:"speaker",name:"Bluetooth Speaker",cat:"Electronics",price:799,was:1499,joined:5,hrs:14.2},{id:"powerbank",name:"Power Bank 10000 mAh",cat:"Electronics",price:599,was:1099,joined:7,hrs:9.4},{id:"shades",name:"Classic Sunglasses",cat:"Fashion",price:349,was:799,joined:2,hrs:26},{id:"bottle",name:"Steel Water Bottle",cat:"Home & Kitchen",price:299,was:599,joined:9,hrs:3.6}].forEach(function(d){d.emo=ART[d.id];d.end=Date.now()+d.hrs*3600000;deals.push(d)});
+deals.forEach(function(d){d.j0=d.joined});
+var DET={earphones:{r:4.4,s:[["Battery","Up to 24 hours with case"],["Connection","Bluetooth 5.3"],["Charging","USB-C"]]},sneakers:{r:4.3,s:[["Upper","Breathable mesh"],["Sole","Cushioned rubber"],["Sizes","UK 6 to 11"]]},watch:{r:4.2,s:[["Display","1.8 inch AMOLED"],["Battery","Up to 7 days"],["Water resistance","IP68"]]},backpack:{r:4.5,s:[["Capacity","30 litres"],["Material","Water-resistant fabric"],["Laptop","Fits up to 15.6 inch"]]},speaker:{r:4.3,s:[["Playtime","Up to 12 hours"],["Output","10 W"],["Connection","Bluetooth 5.0"]]},powerbank:{r:4.4,s:[["Capacity","10000 mAh"],["Ports","USB-C and USB-A"],["Charging","18 W fast charge"]]},shades:{r:4.1,s:[["Lens","UV400 protection"],["Frame","Lightweight acetate"],["Fit","Unisex"]]},bottle:{r:4.6,s:[["Capacity","750 ml"],["Material","Stainless steel"],["Insulation","Cold 24 hours, hot 12 hours"]]}};
+var REV={Electronics:[["Aarav","Good sound and build for the price."],["Meera","The group price made it an easy yes."]],Fashion:[["Kavya","Fits well and looks better than expected."],["Rohan","Nice quality, and my friends joined fast."]],"Home & Kitchen":[["Isha","Sturdy and keeps drinks cold all day."],["Vikram","Great value at the group price."]]};
+var mode="group",q="",sortBy="feat";
+function byId(id){return deals.filter(function(d){return d.id===id})[0]}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function stars(r){var n=Math.round(r);return "★★★★★".slice(0,n)+"☆☆☆☆☆".slice(0,5-n)}
+function grid(){
+ var solo=mode==="solo",ql=q.trim().toLowerCase();
+ var ep=function(d){return solo?d.was:d.price};
+ var list=deals.filter(function(d){return (cat==="all"||d.cat===cat)&&(!ql||(d.name+" "+d.cat).toLowerCase().indexOf(ql)>-1)});
+ var cmp={pl:function(a,b){return ep(a)-ep(b)},ph:function(a,b){return ep(b)-ep(a)},mj:function(a,b){return b.joined-a.joined},dd:function(a,b){return pct(b)-pct(a)}}[sortBy];
+ if(cmp)list=list.slice().sort(cmp);
+ $("deals").innerHTML=list.length?list.map(function(d){
+  var done=d.joined>=T,me=mine[d.id];
+  var top='<article class="deal"><span class="tag">'+(solo?"Solo":pct(d)+"% off")+'</span><div class="emo" aria-hidden="true">'+d.emo+'</div><h3>'+d.name+'</h3><div class="vl"><button data-view="'+d.id+'">Details</button><button data-share="'+d.id+'">Share card</button></div><div class="price">'+inr(ep(d))+'</div>';
+  if(solo)return top+'<div class="count" style="margin-bottom:10px">Solo price. Group price is '+inr(d.price)+'.</div><button class="join" data-solo="'+d.id+'">Buy now · '+inr(d.was)+'</button></article>';
+  return top+'<div class="was">Individual: '+inr(d.was)+'</div><div class="bar"><i style="width:'+d.joined*10+'%"></i></div><div class="count">'+need(d)+'</div><div class="timer" data-end="'+d.end+'">Ends in '+fmt(d.end-Date.now())+'</div><button class="join" data-id="'+d.id+'"'+((me||done)?" disabled":"")+'>'+(me?(done?"Group created":"You’re in"):(done?"Group full":"Join group"))+'</button><button class="solo" data-solo="'+d.id+'">Or buy alone for '+inr(d.was)+'</button>'+(me&&!done?'<a class="wal" target="_blank" rel="noopener" href="'+wa(d)+'">Invite friends on WhatsApp</a>':"")+'</article>'
+ }).join(""):'<div class="empty">No products match “'+esc(q)+'”. Clear the search to see all deals.</div>';
+}
+function setMode(m){mode=m;document.querySelectorAll(".mode button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.mode===m?"true":"false")});$("mnote").hidden=m!=="solo";grid()}
+document.querySelectorAll(".mode button").forEach(function(b){b.addEventListener("click",function(){setMode(b.dataset.mode)})});
+$("q").addEventListener("input",function(){q=this.value;grid()});
+$("sort").addEventListener("change",function(){sortBy=this.value;grid()});
+function view(id){var d=byId(id),t=DET[id],solo=mode==="solo",me=mine[id],done=d.joined>=T;
+ var hs='style="margin:16px 0 0;font:700 18px var(--display)"';
+ var h='<div class="hd">'+d.emo+'</div><h3 id="vm-t" style="font-size:26px">'+d.name+'</h3><div style="color:var(--muted);font-size:14px">'+d.cat+' · <span class="stars">'+stars(t.r)+'</span> '+t.r+' sample rating</div><div class="pp2" style="margin:10px 0 2px">'+inr(solo?d.was:d.price)+'</div>';
+ h+=solo?'<div class="ps">Solo price. Group price is '+inr(d.price)+'.</div>':'<div class="ps">Individual: '+inr(d.was)+' · '+pct(d)+'% off in a group</div><div class="bar"><i style="width:'+d.joined*10+'%"></i></div><div class="count">'+need(d)+'</div>';
+ h+='<h4 '+hs+'>Specs</h4><table>'+t.s.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join("")+'</table><h4 '+hs+'>Reviews</h4><p class="note" style="text-align:left;margin:0 0 4px">Sample reviews for this demo.</p>'+REV[d.cat].map(function(r){return '<div class="rv"><b>'+r[0]+' <span class="stars">'+stars(5)+'</span></b>'+r[1]+'</div>'}).join("");
+ h+=solo?'<button class="join" data-do="solo" data-id="'+id+'" style="margin-top:14px">Buy now · '+inr(d.was)+'</button>':'<button class="join" data-do="join" data-id="'+id+'" style="margin-top:14px"'+((me||done)?" disabled":"")+'>'+(me?"You’re in":(done?"Group full":"Join group for "+inr(d.price)))+'</button><button class="solo" data-do="solo" data-id="'+id+'">Or buy alone for '+inr(d.was)+'</button>';
+ h+='<button class="dbtn" data-do="share" data-id="'+id+'">Share deal card</button>';
+ $("vm-c").innerHTML=h;$("vm").hidden=false;$("vm-x").focus()}
+function closeV(){$("vm").hidden=true}
+$("vm-x").addEventListener("click",closeV);
+$("vm").addEventListener("click",function(e){if(e.target===$("vm"))closeV()});
+$("vm-c").addEventListener("click",function(e){var b=e.target.closest("[data-do]");if(!b||b.disabled)return;var id=b.dataset.id,a=b.dataset.do;closeV();if(a==="join")join(id);else if(a==="solo")openPay(id,"solo");else shareCard(id)});
+$("deals").addEventListener("click",function(e){var v=e.target.closest("[data-view]");if(v){view(v.dataset.view);return}var s=e.target.closest("[data-share]");if(s)shareCard(s.dataset.share)});
+function rr(x,a,b,w,h,r){x.beginPath();x.moveTo(a+r,b);x.arcTo(a+w,b,a+w,b+h,r);x.arcTo(a+w,b+h,a,b+h,r);x.arcTo(a,b+h,a,b,r);x.arcTo(a,b,a+w,b,r);x.closePath()}
+function toBlob(u){var p=u.split(","),m=p[0].match(/:(.*?);/)[1],b=atob(p[1]),n=b.length,a=new Uint8Array(n);while(n--)a[n]=b.charCodeAt(n);return new Blob([a],{type:m})}
+function cardPng(d,cb){
+ var W=1080,H=1350,c=document.createElement("canvas");c.width=W;c.height=H;var x=c.getContext("2d"),F="DM Sans, Arial, sans-serif";
+ var g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,"#0e0630");g.addColorStop(1,"#2a1480");x.fillStyle=g;x.fillRect(0,0,W,H);
+ x.fillStyle="#e9c46a";rr(x,64,64,72,72,20);x.fill();
+ x.fillStyle="#fff";x.font="700 40px "+F;x.fillText("Friends Get Discount",156,114);
+ x.font="800 74px "+F;x.fillText("Join my group.",64,250);x.fillStyle="#e9c46a";x.fillText("We all save.",64,336);
+ x.fillStyle="#fff";rr(x,64,380,952,700,48);x.fill();
+ x.fillStyle="#1b1340";x.font="800 54px "+F;x.fillText(d.name,100,820);
+ x.fillStyle="#12a150";x.font="800 80px "+F;x.fillText(inr(d.price),100,905);
+ x.fillStyle="#6b6590";x.font="500 34px "+F;x.fillText("Individual "+inr(d.was)+" · "+pct(d)+"% off",100,955);
+ x.fillStyle="#ece7fb";rr(x,100,985,880,26,13);x.fill();x.fillStyle="#12a150";rr(x,100,985,Math.max(26,880*d.joined/T),26,13);x.fill();
+ x.fillStyle="#1b1340";x.font="600 32px "+F;x.fillText(d.joined+" of "+T+" joined · "+Math.max(0,T-d.joined)+" needed",100,1060);
+ x.fillStyle="#cfc5ff";x.font="600 40px "+F;x.fillText("Shop together. Save together.",64,1200);
+ x.font="500 30px "+F;x.fillText("Android app coming soon",64,1252);
+ var defs=document.querySelector("body>svg defs").innerHTML;
+ var s=d.emo.replace("<svg ",'<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" ').replace(/(<svg[^>]*>)/,"$1<defs>"+defs+"</defs>");
+ var im=new Image();
+ im.onload=function(){x.drawImage(im,360,400,360,360);cb(c.toDataURL("image/png"))};
+ im.onerror=function(){cb(c.toDataURL("image/png"))};
+ im.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(s)}
+function shareCard(id){var d=byId(id);cardPng(d,function(url){
+ var msg="Join my group for "+d.name+" on Friends Get Discount. We all pay "+inr(d.price)+" instead of "+inr(d.was)+".";
+ $("sc-i").src=url;$("sc-w").href="https://wa.me/?text="+encodeURIComponent(msg);
+ var can=!!navigator.share;$("sc-s").hidden=!can;
+ $("sc-n").textContent=can?"Share sends the card image. You can also send the text on WhatsApp.":"Press and hold the image to save it, then send it on WhatsApp.";
+ $("sc-s").onclick=function(){try{var f=new File([toBlob(url)],"deal-card.png",{type:"image/png"}),o={text:msg};if(navigator.canShare&&navigator.canShare({files:[f]}))o.files=[f];navigator.share(o).catch(function(){$("sc-n").textContent="Sharing isn’t available here. Press and hold the image to save it."})}catch(e){$("sc-n").textContent="Sharing isn’t available here. Press and hold the image to save it."}};
+ $("sc").hidden=false;$("sc-x").focus()})}
+$("sc-x").addEventListener("click",function(){$("sc").hidden=true});
+$("sc").addEventListener("click",function(e){if(e.target===$("sc"))$("sc").hidden=true});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeV();$("sc").hidden=true}});
+$("ab-x").addEventListener("click",function(){$("appbar").hidden=true;try{localStorage.setItem("fgd_ab","1")}catch(e){}});
+try{if(localStorage.getItem("fgd_ab"))$("appbar").hidden=true}catch(e){}
+applyS();app();grid();calc();
+</script>
+</body>
+</html>
